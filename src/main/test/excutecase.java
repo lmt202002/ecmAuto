@@ -16,11 +16,13 @@ public class excutecase {
         String domain="http://o2oagent.ecmaster.cn";
         Session.suLogin(driver,domain);
 
-        String bigCode="8103211325146607";
-        //        String bigCode=bgAddSecurityCode.addCode(driver,domain);
-        bgBindCode.bindCode(driver,domain,bgAddSecurityCode.addCode(driver,domain));
+//        String bigCode=bgAddSecurityCode.addCode(driver,domain);
+//        bgBindCode.bindCode(driver,domain,bigCode);
 //        bgSendGoods.sendGoods(driver,domain,bigCode);
-//        Thread.sleep(3000);
+
+
+
+
 //        Session.suLogout(driver,domain);
 //        driver.close();
     }

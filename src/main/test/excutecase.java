@@ -15,8 +15,9 @@ public class excutecase {
         driver.manage().window().maximize();
         String domain="http://o2oagent.ecmaster.cn";
         Session.suLogin(driver,domain);
-        String bigCode=bgAddSecurityCode.addCode(driver,domain);
-
+//        String bigCode=bgAddSecurityCode.addCode(driver,domain);
+        String bigcode="8103211325147701";
+        bgSendGoods.sendGoods(driver,domain,bigcode);
 //        driver.close();
 //        Thread.sleep(3000);
 //        Session.suLogout(driver,domain);

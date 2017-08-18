@@ -8,6 +8,9 @@ import java.util.List;
 
 public class bgSendGoods {
     public static void sendGoods(WebDriver driver , String domain,String bigCode) throws InterruptedException {
+        /*
+        点击总部所有订单列表的第一个发货链接，问按给的大码发货
+         */
         driver.get(domain+"/admin/wechatAgent/order/topOrderList?tabIndex=0");//访问防伪码数据管理页面
 //        driver.navigate().refresh();
         List<WebElement> links=driver.findElements(By.linkText("发货"));//获取所有发货链接

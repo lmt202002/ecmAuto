@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 
 /**
  * Created by lvshr on 2017/8/15.
+ * 登录退出方法
  */
 public  class Session{
     public void main(){

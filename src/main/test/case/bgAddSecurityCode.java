@@ -7,8 +7,8 @@ import java.util.List;
 
 public class bgAddSecurityCode {
     public static String addCode(WebDriver driver , String domain) throws InterruptedException {
-        /*
-        添加1个规格为60的大码，并获取大码列表没绑定的第一个规格为60的大码
+        /**
+        添加1个规格为60的大码，并获取大码列表没绑定的第一个规格为60的大码，返回大码字符串参数bigCode
          */
         driver.get(domain+"/admin/securityCode/list");//访问防伪码数据管理页面
 //        driver.navigate().refresh();

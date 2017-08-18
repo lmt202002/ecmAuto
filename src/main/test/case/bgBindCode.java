@@ -9,7 +9,10 @@ import java.util.List;
 
 public class bgBindCode {
     public static void bindCode(WebDriver driver , String domain,String bigCode) throws InterruptedException {
-        driver.get(domain+"/admin/agentProduct/index");//访问防伪码数据管理页面
+        /**
+        访问总部库存管理页面,并给第一款商品即“新商品0621”的第一个规格 “小红”绑定防伪码；
+         */
+        driver.get(domain+"/admin/agentProduct/index");//访问总部库存管理页面
 //        driver.navigate().refresh();
         Thread.sleep(2000);
          WebElement manageCodes=driver.findElement(By.xpath(".//*[@id='grid']/div/div[3]/table/tbody/tr[2]/td[2]/div/span/a"));

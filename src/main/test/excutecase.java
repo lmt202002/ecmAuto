@@ -5,9 +5,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 //import org.openqa.selenium.ie.InternetExplorerDriver;
 import common.*;
-/**
- * Created by lvshr on 2017/3/23.
- */
 
 public class excutecase {
     public static void main(String[] args ) throws InterruptedException {
@@ -15,6 +12,7 @@ public class excutecase {
         driver.manage().window().maximize();
         String domain="http://o2oagent.ecmaster.cn";
         Session.suLogin(driver,domain);
+        bgAuditOrder.auditOrder(driver,domain,true);
 
 //        String bigCode=bgAddSecurityCode.addCode(driver,domain);
 //        bgBindCode.bindCode(driver,domain,bigCode);

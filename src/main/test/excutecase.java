@@ -16,6 +16,7 @@ public class excutecase {
 //        String bigCode=bgAddSecurityCode.addCode(driver,domain);//后台添加大码操作
 //        bgBindCode.bindCode(driver,domain,bigCode);//后台绑定大码操作
 //        bgSendGoods.sendGoods(driver,domain,bigCode);//后台发货操作
+        bgCatchStock.catchStock(driver,domain,"新商品06");
 
 
 

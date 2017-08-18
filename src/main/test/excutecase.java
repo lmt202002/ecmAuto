@@ -11,7 +11,7 @@ import common.*;
 
 public class excutecase {
     public static void main(String[] args ) throws InterruptedException {
-        WebDriver driver=new FirefoxDriver();
+        WebDriver driver=new ChromeDriver();
         driver.manage().window().maximize();
         String domain="http://o2oagent.ecmaster.cn";
         Session.suLogin(driver,domain);

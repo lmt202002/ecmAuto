@@ -10,9 +10,6 @@ public class bgAddSecurityCode {
         driver.get(domain+"/admin/securityCode/list");//访问防伪码数据管理页面
 //        driver.navigate().refresh();
         Thread.sleep(3000);
-//        WebElement iframe=driver.findElement(By.tagName("iframe"));
-//        driver.switchTo().frame(driver.findElement(By.tagName("iframe")));//跳进框架页
-
         //点击生成防伪码按键
         driver.findElement(By.xpath(".//*[@id='bar-item-button7']/button")).click();
         // 设置要生成的大码数量
@@ -31,7 +28,6 @@ public class bgAddSecurityCode {
         sel2.selectByVisibleText("未绑定");//选择条件为未绑定
         driver.findElement(By.id("btnSearch")).click();//点击搜索
         List<WebElement> bigCodeList=driver.findElements(By.className("bui-grid-cell-text"));
-//        System.out.println(bigCodeList.get(0).getText());
         String bigCode=bigCodeList.get(0).getText();
         return bigCode;
     }

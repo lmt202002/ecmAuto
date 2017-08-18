@@ -24,7 +24,7 @@ public  class Session{
     public static void logout(WebDriver driver , String domain){
         driver.get(domain+"/m/agent/admin/adminLogout.html");//退出前台
     }
-    public static void suLogin(WebDriver driver , String domain){
+    public static void bgLogin(WebDriver driver , String domain){
         driver.get(domain+"/admin/login");
         WebElement username=driver.findElement(By.id("username"));
         WebElement password=driver.findElement(By.id("password"));
@@ -33,7 +33,7 @@ public  class Session{
         password.sendKeys("111111");//填写密码
         login.click();//登录后台
     }
-    public static void suLogout(WebDriver driver , String domain){
+    public static void bgLogout(WebDriver driver , String domain){
         driver.get(domain+"/admin/adminLogout.htm");//退出后台
     }
 }

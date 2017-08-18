@@ -11,17 +11,16 @@ public class excutecase {
         WebDriver driver=new ChromeDriver();
         driver.manage().window().maximize();
         String domain="http://o2oagent.ecmaster.cn";
-        Session.suLogin(driver,domain);
-        bgAuditOrder.auditOrder(driver,domain,true);
-
-//        String bigCode=bgAddSecurityCode.addCode(driver,domain);
-//        bgBindCode.bindCode(driver,domain,bigCode);
-//        bgSendGoods.sendGoods(driver,domain,bigCode);
-
+        Session.bgLogin(driver,domain);
+//        bgAuditOrder.auditOrder(driver,domain,true);//后台总部审核操作
+//        String bigCode=bgAddSecurityCode.addCode(driver,domain);//后台添加大码操作
+//        bgBindCode.bindCode(driver,domain,bigCode);//后台绑定大码操作
+//        bgSendGoods.sendGoods(driver,domain,bigCode);//后台发货操作
 
 
 
-//        Session.suLogout(driver,domain);
+
+//        Session.bgLogout(driver,domain);
 //        driver.close();
     }
 

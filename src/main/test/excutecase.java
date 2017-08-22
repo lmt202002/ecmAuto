@@ -6,6 +6,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 //import org.openqa.selenium.ie.InternetExplorerDriver;
 import common.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class excutecase {
@@ -14,7 +15,7 @@ public class excutecase {
 //        driver.manage().timeouts().implicitlyWait(10, 3);
         driver.manage().window().maximize();
         String domain="http://o2oagent.ecmaster.cn";
-        String user="13055203098";
+        String user="13055203099";
         Session.login(driver,domain,user);
 //        Session.bgLogin(driver,domain);
 //        bgAuditOrder.auditOrder(driver,domain,true);//后台总部审核操作
@@ -28,9 +29,13 @@ public class excutecase {
 //        int goodsnum=Integer.parseInt(List1.get(1));
 //        String billnum=List1.get(2);
 //        System.out.println("订单总额："+money+"\n订单第一款商品数量："+goodsnum+"\n订单号："+billnum);
-
-
-
+//        fgAuditOrder.auditOrder(driver,domain,true);//前台审核下级订单
+//        fgCatchStock.catchStock(driver,domain,"新商品06");//获取新商品06搜索结果的库存
+//        fgCatchAch.catchAch(driver,domain);//获取我的团队业绩和当前返点比例
+        List<String> userList=new ArrayList<String>();
+        userList.add("啊水2");
+        userList.add("bruceloo2");
+        fgCatchAchRebateGiven.catchAchRebateGiven(driver,domain,userList);
 
 
 

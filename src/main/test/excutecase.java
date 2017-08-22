@@ -32,10 +32,12 @@ public class excutecase {
 //        fgAuditOrder.auditOrder(driver,domain,true);//前台审核下级订单
 //        fgCatchStock.catchStock(driver,domain,"新商品06");//获取新商品06搜索结果的库存
 //        fgCatchAch.catchAch(driver,domain);//获取我的团队业绩和当前返点比例
-        List<String> userList=new ArrayList<String>();
-        userList.add("啊水2");
-        userList.add("bruceloo2");
-        fgCatchAchRebateGiven.catchAchRebateGiven(driver,domain,userList);
+//        List<String> userList=new ArrayList<String>();
+//        userList.add("啊水2");
+//        userList.add("bruceloo2");
+//        List<Float> List2=new ArrayList<Float>();
+//        List2=fgCatchAchRebateGiven.catchAchRebateGiven(driver,domain,userList);
+//        System.out.println("返利金额："+List2.get(0)+"\n订单总额："+List2.get(1));
 
 
 

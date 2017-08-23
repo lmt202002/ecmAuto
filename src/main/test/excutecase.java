@@ -11,6 +11,7 @@ import java.util.List;
 
 public class excutecase {
     public static void main(String[] args ) throws InterruptedException {
+
 //        WebDriver driver=new ChromeDriver();
 ////        driver.manage().timeouts().implicitlyWait(10, 3);
 //        driver.manage().window().maximize();
@@ -39,7 +40,7 @@ public class excutecase {
 //        List<Float> List2=new ArrayList<Float>();
 //        List2=fgCatchAchRebateGiven.catchAchRebateGiven(driver,domain,userList);
 //        System.out.println("返利金额："+List2.get(0)+"\n订单总额："+List2.get(1));
-        UserRelations.userRelations();
+        UserRelations.userRelations(UserRelationsData.userData());
 
 
 //        Session.bgLogout(driver,domain);

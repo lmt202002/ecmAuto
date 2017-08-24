@@ -1,7 +1,7 @@
 package common;
 
 public class UserRelationsData {
-    public String wx="";
+    public String wechat="";
     public String name="";
     public String phone="";
     public String parent="";
@@ -9,11 +9,11 @@ public class UserRelationsData {
 
 
     public String getWx() {
-        return wx;
+        return wechat;
     }
 
     public void setWx(String wx) {
-        this.wx = wx;
+        this.wechat = wx;
     }
 
     public String getName() {
@@ -67,7 +67,8 @@ public class UserRelationsData {
                  {"atyj3","at一级3","18444440003","at梦想1","atyj2"},
                  {"atyj4","at一级4","18444440004","at梦想1","atyj3"},
          };
-
+        String jsonData = "[{'name':'John', 'grade':[{'course':'English','score':100},{'course':'Math','score':78}]}," +
+                "           {'name':'Tom', 'grade':[{'course':'English','score':86},{'course':'Math','score':90}]}]";
         return users;
     }
 

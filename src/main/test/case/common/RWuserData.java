@@ -5,7 +5,7 @@ import java.io.PrintWriter;
 import org.apache.commons.io.FileUtils;
 import java.io.IOException;
 import org.json.JSONObject;
-public class ReadAndWriteJSON {
+public class RWuserData {
 
     public static void main(String args) throws IOException {
 

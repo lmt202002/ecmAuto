@@ -48,7 +48,7 @@ public class excutecase {
 //        readJSON.readUserData();
 //        ReadAndWriteJSON.readUserData();
         System.out.println("atds1的手机是："+readJSON.readUserData().getJSONObject("atds1").getString("phone"));
-        System.out.println("atds2的推荐人是："+readJSON.writeUserData().getJSONObject("atds2").getString("reference"));
+        System.out.println("atds2的推荐人是："+readJSON.writeUserData("atyj4","一级代理","atmx1111","atyj33333").getJSONObject("atds2").getString("reference"));
 
 //        Session.bgLogout(driver,domain);
 //        driver.close();

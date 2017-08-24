@@ -1,32 +1,32 @@
 {
   "atds1":
-    {"wechat":"atds1","name":"at董事","phone":"18111110001","parent":"总部","reference":""},
+    {"wechat":"atds1","name":"at董事","phone":"18111110001","level":"董事","parent":"总部","reference":""},
   "atzc1":
-    {"wechat":"atzc1","name":"at总裁1","phone":"18222220001","parent":"at董事","reference":""},
+    {"wechat":"atzc1","name":"at总裁1","phone":"18222220001","level":"执行总裁","parent":"at董事","reference":""},
   "atmx1":
-    {"wechat":"atmx1","name":"at梦想1","phone":"18333330001","parent":"at总裁1","reference":""},
+    {"wechat":"atmx1","name":"at梦想1","phone":"18333330001","level":"梦想合伙人","parent":"at总裁1","reference":""},
   "atyj1":
-    {"wechat":"atyj1","name":"at一级1","phone":"18444440001","parent":"at梦想1","reference":""},
+    {"wechat":"atyj1","name":"at一级1","phone":"18444440001","level":"一级代理","parent":"at梦想1","reference":""},
   "atds2":
-    {"wechat":"atds2","name":"at董事2","phone":"19111110001","parent":"总部","reference":"atds1"},
+    {"wechat":"atds2","name":"at董事2","phone":"19111110001","level":"董事","parent":"总部","reference":"atds1"},
   "atzc2":
-    {"wechat":"atzc2","name":"at总裁2","phone":"18222220002","parent":"at董事","reference":"atzc1"},
+    {"wechat":"atzc2","name":"at总裁2","phone":"18222220002","level":"执行总裁","parent":"at董事","reference":"atzc1"},
   "atzc3":
-    {"wechat":"atzc3","name":"at总裁3","phone":"18222220003","parent":"at董事","reference":"atzc2"},
+    {"wechat":"atzc3","name":"at总裁3","phone":"18222220003","level":"执行总裁","parent":"at董事","reference":"atzc2"},
   "atzc4":
-    {"wechat":"atzc4","name":"at总裁4","phone":"18222220004","parent":"at董事","reference":"atzc3"},
+    {"wechat":"atzc4","name":"at总裁4","phone":"18222220004","level":"执行总裁","parent":"at董事","reference":"atzc3"},
   "atmx2":
-    {"wechat":"atmx2","name":"at梦想2","phone":"18333330002","parent":"at总裁1","reference":"atmx1"},
+    {"wechat":"atmx2","name":"at梦想2","phone":"18333330002","level":"梦想合伙人","parent":"at总裁1","reference":"atmx1"},
   "atmx3":
-    {"wechat":"atmx3","name":"at梦想3","phone":"18333330003","parent":"at总裁1","reference":"atmx2"},
+    {"wechat":"atmx3","name":"at梦想3","phone":"18333330003","level":"梦想合伙人","parent":"at总裁1","reference":"atmx2"},
   "atmx4":
-    {"wechat":"atmx4","name":"at梦想4","phone":"18333330004","parent":"at总裁1","reference":"atmx3"},
+    {"wechat":"atmx4","name":"at梦想4","phone":"18333330004","level":"梦想合伙人","parent":"at总裁1","reference":"atmx3"},
   "atyj2":
-    {"wechat":"atyj2","name":"at一级2","phone":"18444440002","parent":"at梦想1","reference":"atyj1"},
+    {"wechat":"atyj2","name":"at一级2","phone":"18444440002","level":"一级代理","parent":"at梦想1","reference":"atyj1"},
   "atyj3":
-    {"wechat":"atyj3","name":"at一级3","phone":"18444440003","parent":"at梦想1","reference":"atyj2"},
+    {"wechat":"atyj3","name":"at一级3","phone":"18444440003","level":"一级代理","parent":"at梦想1","reference":"atyj2"},
   "atyj4":
-    {"wechat":"atyj4","name":"at一级4","phone":"18444440004","parent":"at梦想1","reference":"atyj3"}
+    {"wechat":"atyj4","name":"at一级4","phone":"18444440004","level":"一级代理","parent":"at梦想1","reference":"atyj3"}
 }
 //初始化14个用户,每个用户五个属性顺序为：微信号、姓名、手机号码、上级、推荐人
 

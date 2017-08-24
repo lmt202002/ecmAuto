@@ -1,6 +1,7 @@
 {
   "atzc1": {
     "phone": "18222220001",
+    "level": "执行总裁",
     "name": "at总裁1",
     "parent": "at董事",
     "wechat": "atzc1",
@@ -8,6 +9,7 @@
   },
   "atzc3": {
     "phone": "18222220003",
+    "level": "执行总裁",
     "name": "at总裁3",
     "parent": "at董事",
     "wechat": "atzc3",
@@ -15,6 +17,7 @@
   },
   "atzc2": {
     "phone": "18222220002",
+    "level": "执行总裁",
     "name": "at总裁2",
     "parent": "at董事",
     "wechat": "atzc2",
@@ -22,13 +25,15 @@
   },
   "atyj4": {
     "phone": "18444440004",
+    "level": "一级代理",
     "name": "at一级4",
-    "parent": "at梦想1",
+    "parent": "atmx1111",
     "wechat": "atyj4",
-    "reference": "atyj3"
+    "reference": "atyj33333"
   },
   "atds1": {
     "phone": "18111110001",
+    "level": "董事",
     "name": "at董事",
     "parent": "总部",
     "wechat": "atds1",
@@ -36,6 +41,7 @@
   },
   "atzc4": {
     "phone": "18222220004",
+    "level": "执行总裁",
     "name": "at总裁4",
     "parent": "at董事",
     "wechat": "atzc4",
@@ -43,13 +49,15 @@
   },
   "atds2": {
     "phone": "19111110001",
+    "level": "董事",
     "name": "at董事2",
     "parent": "总部",
     "wechat": "atds2",
-    "reference": "9999999"
+    "reference": "atds1"
   },
   "atyj1": {
     "phone": "18444440001",
+    "level": "一级代理",
     "name": "at一级1",
     "parent": "at梦想1",
     "wechat": "atyj1",
@@ -57,6 +65,7 @@
   },
   "atyj2": {
     "phone": "18444440002",
+    "level": "一级代理",
     "name": "at一级2",
     "parent": "at梦想1",
     "wechat": "atyj2",
@@ -64,6 +73,7 @@
   },
   "atyj3": {
     "phone": "18444440003",
+    "level": "一级代理",
     "name": "at一级3",
     "parent": "at梦想1",
     "wechat": "atyj3",
@@ -71,6 +81,7 @@
   },
   "atmx3": {
     "phone": "18333330003",
+    "level": "梦想合伙人",
     "name": "at梦想3",
     "parent": "at总裁1",
     "wechat": "atmx3",
@@ -78,6 +89,7 @@
   },
   "atmx2": {
     "phone": "18333330002",
+    "level": "梦想合伙人",
     "name": "at梦想2",
     "parent": "at总裁1",
     "wechat": "atmx2",
@@ -85,6 +97,7 @@
   },
   "atmx4": {
     "phone": "18333330004",
+    "level": "梦想合伙人",
     "name": "at梦想4",
     "parent": "at总裁1",
     "wechat": "atmx4",
@@ -92,6 +105,7 @@
   },
   "atmx1": {
     "phone": "18333330001",
+    "level": "梦想合伙人",
     "name": "at梦想1",
     "parent": "at总裁1",
     "wechat": "atmx1",

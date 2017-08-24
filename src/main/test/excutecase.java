@@ -7,7 +7,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import common.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class excutecase {
     public static void main(String[] args ) throws InterruptedException {
@@ -40,8 +42,19 @@ public class excutecase {
 //        List<Float> List2=new ArrayList<Float>();
 //        List2=fgCatchAchRebateGiven.catchAchRebateGiven(driver,domain,userList);
 //        System.out.println("返利金额："+List2.get(0)+"\n订单总额："+List2.get(1));
-        UserRelations.userRelations(UserRelationsData.userData());
+//        UserRelations.userRelations(UserRelationsData.userData());
+        Map<String,UserRelationsData> map=new HashMap<String, UserRelationsData>();
+        UserRelationsData aa=new UserRelationsData();
+        aa.setName("");
 
+
+        map.put("q",aa);
+
+        UserRelationsData bb=map.get("q");
+
+
+
+        System.out.println(aa.name);
 
 //        Session.bgLogout(driver,domain);
 //        driver.close();

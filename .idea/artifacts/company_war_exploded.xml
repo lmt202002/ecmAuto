@@ -57,6 +57,7 @@
           <element id="library" level="project" name="Maven: org.apache.ant:ant-launcher:1.7.0" />
           <element id="library" level="project" name="Maven: org.yaml:snakeyaml:1.15" />
           <element id="library" level="project" name="Maven: org.beanshell:bsh:2.0b4" />
+          <element id="library" level="project" name="Maven: org.json:json:20170516" />
         </element>
       </element>
       <element id="directory" name="META-INF">

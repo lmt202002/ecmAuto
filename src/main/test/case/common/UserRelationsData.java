@@ -1,12 +1,58 @@
 package common;
 
 public class UserRelationsData {
+    public String wx="";
+    public String name="";
+    public String phone="";
+    public String parent="";
+    public String reference="";
 
-     public static String[][] userData(){
+
+    public String getWx() {
+        return wx;
+    }
+
+    public void setWx(String wx) {
+        this.wx = wx;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getParent() {
+        return parent;
+    }
+
+    public void setParent(String parent) {
+        this.parent = parent;
+    }
+
+    public String getReference() {
+        return reference;
+    }
+
+    public void setReference(String reference) {
+        this.reference = reference;
+    }
+
+    public static String[][] userData(){
 
 //初始化14个用户,每个用户五个属性顺序为：微信号、姓名、手机号码、上级、推荐人
          String[][] users={
-                 {"atds1111","at董事","18111110001","总部",""},
+                 {"atds1","at董事","18111110001","总部",""},
                  {"atzc1","at总裁1","18222220001","at董事",""},
                  {"atmx1","at梦想1","18333330001","at总裁1",""},
                  {"atyj1","at一级1","18444440001","at梦想1",""},
@@ -21,8 +67,8 @@ public class UserRelationsData {
                  {"atyj3","at一级3","18444440003","at梦想1","atyj2"},
                  {"atyj4","at一级4","18444440004","at梦想1","atyj3"},
          };
-         return users;
 
+        return users;
     }
 
 }

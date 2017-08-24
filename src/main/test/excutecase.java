@@ -45,7 +45,11 @@ public class excutecase {
 //        System.out.println("返利金额："+List2.get(0)+"\n订单总额："+List2.get(1));
 //        UserRelations.userRelations(UserRelationsData.userData());
         ReadAndWriteJSON  readJSON=new ReadAndWriteJSON();
-        readJSON.test();
+//        readJSON.readUserData();
+//        ReadAndWriteJSON.readUserData();
+        System.out.println("atds1的手机是："+readJSON.readUserData().getJSONObject("atds1").getString("phone"));
+        System.out.println("atds2的推荐人是："+readJSON.writeUserData().getJSONObject("atds2").getString("reference"));
+
 //        Session.bgLogout(driver,domain);
 //        driver.close();
     }

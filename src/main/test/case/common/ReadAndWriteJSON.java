@@ -1,70 +1,23 @@
 package common;
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
+import org.apache.commons.io.FileUtils;
 import java.io.IOException;
-import java.io.PrintWriter;
-import org.json.JSONException;
 import org.json.JSONObject;
-
 public class ReadAndWriteJSON {
 
-    /**
-     * @param args
-     * @throws JSONException
-     * @throws IOException
-     */
-    public static void main(String[] args) throws JSONException, IOException {
-        // TODO Auto-generated method stub  
+    public static void main(String args) throws IOException {
 
-        // String s = ReadFile("./src/test.json");  
-        // System.out.println(s);  
+    }
+    public static void test() throws IOException {
+        File file=new File("E:\\github\\company\\src\\main\\test\\case\\common\\test.json");
+        String content= FileUtils.readFileToString(file,"UTF-8");
+        JSONObject jsonObject=new JSONObject(content);
+        System.out.println("姓名是："+jsonObject.getString("name"));
+        System.out.println("年龄："+jsonObject.getDouble("age"));
+        System.out.println("学到的技能："+jsonObject.getJSONArray("major").getString(0));
+        System.out.println("国家："+jsonObject.getJSONObject("Nativeplace").getString("country"));
+//        jsonObject.getJSONArray("major").get(0);
 
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("1", "一");
-        jsonObject.put("2", "二");
-        jsonObject.put("3", "三");
-        jsonObject.put("4", "四");
-        jsonObject.put("5", "五");
-        jsonObject.put("6", "六");
-        jsonObject.put("7", "⑦");
-        System.out.println(jsonObject);
-
-        writeFile("./src/test.json", jsonObject.toString());
     }
 
-    public static void writeFile(String filePath, String sets)
-            throws IOException {
-        FileWriter fw = new FileWriter(filePath);
-        PrintWriter out = new PrintWriter(fw);
-        out.write(sets);
-        out.println();
-        fw.close();
-        out.close();
-    }
-
-    public static String ReadFile(String path) {
-        File file = new File(path);
-        BufferedReader reader = null;
-        String laststr = "";
-        try {
-            reader = new BufferedReader(new FileReader(file));
-            String tempString = null;
-            while ((tempString = reader.readLine()) != null) {
-                laststr = laststr + tempString;
-            }
-            reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (reader != null) {
-                try {
-                    reader.close();
-                } catch (IOException e1) {
-                }
-            }
-        }
-        return laststr;
-    }
-}  
+}

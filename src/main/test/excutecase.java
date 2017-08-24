@@ -6,13 +6,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 //import org.openqa.selenium.ie.InternetExplorerDriver;
 import common.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class excutecase {
-    public static void main(String[] args ) throws InterruptedException {
+    public static void main(String[] args ) throws InterruptedException, IOException {
 
 //        WebDriver driver=new ChromeDriver();
 ////        driver.manage().timeouts().implicitlyWait(10, 3);
@@ -43,8 +44,8 @@ public class excutecase {
 //        List2=fgCatchAchRebateGiven.catchAchRebateGiven(driver,domain,userList);
 //        System.out.println("返利金额："+List2.get(0)+"\n订单总额："+List2.get(1));
 //        UserRelations.userRelations(UserRelationsData.userData());
-        ReadJSON  readJSON=new ReadJSON();
-
+        ReadAndWriteJSON  readJSON=new ReadAndWriteJSON();
+        readJSON.test();
 //        Session.bgLogout(driver,domain);
 //        driver.close();
     }

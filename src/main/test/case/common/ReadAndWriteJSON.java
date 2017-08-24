@@ -4,20 +4,22 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import org.apache.commons.io.FileUtils;
 import java.io.IOException;
-
 import org.json.JSONObject;
 public class ReadAndWriteJSON {
 
     public static void main(String args) throws IOException {
 
     }
+
     public static JSONObject readUserData() throws IOException {
+        /**读取文件所有JSON数据赋给JSON对象*/
         File file=new File("E:\\github\\company\\src\\main\\test\\case\\common\\userData.json");
         String content= FileUtils.readFileToString(file,"UTF-8");
         JSONObject jsonObject=new JSONObject(content);
         return jsonObject;
     }
     public static JSONObject writeUserData(String wechat,String level,String parent,String reference) throws IOException {
+        /**根据wechat找到等级、上级、推荐人，并根据给的参数值修改完后写入JSON文件*/
         JSONObject jsonObject=null;
         try {
             File file = new File("E:\\github\\company\\src\\main\\test\\case\\common\\userData.json");
@@ -42,6 +44,7 @@ public class ReadAndWriteJSON {
         return jsonObject;
     }
     public static JSONObject writeUserData(String wechat,String parent,String reference) throws IOException {
+        /**根据wechat找到上级、推荐人，并根据给的参数值修改完后写入JSON文件*/
         JSONObject jsonObject=null;
         try {
             File file = new File("E:\\github\\company\\src\\main\\test\\case\\common\\userData.json");
@@ -65,6 +68,7 @@ public class ReadAndWriteJSON {
         return jsonObject;
     }
     public static JSONObject writeUserData(String wechat,String reference) throws IOException {
+        /**根据wechat找到推荐人，并根据给的参数值修改完后写入JSON文件*/
         JSONObject jsonObject = null;
         try {
             File file = new File("E:\\github\\company\\src\\main\\test\\case\\common\\userData.json");

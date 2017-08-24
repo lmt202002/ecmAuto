@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import java.util.ArrayList;
 import java.util.List;
 
-public class fgCatchStock {
+public class FgCatchStock {
     public static List catchStock(WebDriver driver , String domain, String goodsName) throws InterruptedException {
         /**
         访问前台我的库存管理页面,并搜索商品goodsName，获取库存，返回值为List ，包含整数已收库存和待收库存；

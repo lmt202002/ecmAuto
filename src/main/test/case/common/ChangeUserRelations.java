@@ -1,6 +1,6 @@
 package common;
 
-public class changeUserRelations {
+public class ChangeUserRelations {
     public String wechat="";
     public String name="";
     public String phone="";

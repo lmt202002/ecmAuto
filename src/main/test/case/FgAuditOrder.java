@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class fgAuditOrder {
+public class FgAuditOrder {
     public static void auditOrder(WebDriver driver , String domain,boolean status) throws InterruptedException {
         /**
         前台代理商审核下级订单，并按提供的参数点同意或拒绝

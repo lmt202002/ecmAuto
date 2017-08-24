@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class bgAuditOrder {
+public class BgAuditOrder {
     public static void auditOrder(WebDriver driver , String domain,boolean status) throws InterruptedException {
         /**
         点击总部所有订单列表的第一个审核链接，进入审核页面，并按提供的参数点同意或拒绝

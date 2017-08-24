@@ -7,7 +7,7 @@ import org.openqa.selenium.JavascriptExecutor;
 
 import java.util.*;
 
-public class fgGetBill {
+public class FgGetBill {
     public static List getBill(WebDriver driver , String domain) throws InterruptedException {
         /**
          访问前台订货商品列表，并订货，返回字符串类型的订单总额、第一款商品数量、订单号的List;

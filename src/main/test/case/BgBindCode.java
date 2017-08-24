@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.Select;
 import java.sql.Driver;
 import java.util.List;
 
-public class bgBindCode {
+public class BgBindCode {
     public static void bindCode(WebDriver driver , String domain,String bigCode) throws InterruptedException {
         /**
         访问总部库存管理页面,并给第一款商品即“新商品0621”的第一个规格 “小红”绑定防伪码；

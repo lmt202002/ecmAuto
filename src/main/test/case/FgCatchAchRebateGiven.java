@@ -5,17 +5,18 @@ import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class fgCatchAchRebateGet {
+public class FgCatchAchRebateGiven {
     public static List catchAchRebateGiven(WebDriver driver , String domain,List<String> userList) throws InterruptedException {
         /**
-        访问我的应收团队返利页面，获取我从目标的收取的团队返利，返回Float类型List ，包含返利金额、订单总额；
+        访问我的应付团队返利页面，获取我应付给目标的团队返利，返回Float类型List ，包含返利金额、订单总额；
          */
         float rebate=0;
         float totals=0;
         List<WebElement> nameElement=new ArrayList<WebElement>(); //定义列表所有对象List
         List<Float> List1=new ArrayList<Float>();//定义返回值List
-        driver.get(domain+"/m/agent/admin/performance/myBillList?limit=100&start=0");//访问我应收的团队返利页面
+        driver.get(domain+"/m/agent/admin/performance/mySubBillList?limit=100&start=0");//访问我应付的团队返利页面
         Thread.sleep(1000);
+
         nameElement=driver.findElements(By.tagName("h3"));//获取列表所记录的姓名对象
 
         if (nameElement.size()==0){  //如果没有h3对象，证明列表没有记录，值都可以置为空，返回0值；
@@ -23,8 +24,7 @@ public class fgCatchAchRebateGet {
             List1.add(rebate);
             List1.add(totals);
             return List1;
-        }
-
+            }
         int goalnum=0;//定义变量存储指定姓名的最后一条记录位置
         for (int i=0;i<nameElement.size();i++){
 //            System.out.println(nameElement.get(i).getText());

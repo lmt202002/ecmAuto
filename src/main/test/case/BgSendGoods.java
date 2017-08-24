@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
-public class bgSendGoods {
+public class BgSendGoods {
     public static void sendGoods(WebDriver driver , String domain,String bigCode) throws InterruptedException {
         /**
         点击总部所有订单列表的第一个发货链接，并按给的大码发货

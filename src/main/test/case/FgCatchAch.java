@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import java.util.ArrayList;
 import java.util.List;
 
-public class fgCatchAch {
+public class FgCatchAch {
     public static List catchAch(WebDriver driver , String domain) throws InterruptedException {
         /**
         访问前台首页,我的团队业绩、当前返点比例，返回Float类型型List ，包含团队业绩、当前返点比例；

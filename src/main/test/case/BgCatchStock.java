@@ -3,7 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-public class bgCatchStock {
+public class BgCatchStock {
     public static int catchStock(WebDriver driver , String domain,String goodsName) throws InterruptedException {
         /**
         访问总部库存管理页面,并搜索商品goodsName，获取库存，返回值为库存数值；

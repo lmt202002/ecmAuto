@@ -32,7 +32,7 @@ public class ReadAndWriteJSON {
             jsontemp.put("reference", reference);//给对象的推荐人key赋值
             jsonObject.put(wechat, jsontemp);   //把指定对象的JSON数据再写入所有人的JSON数据中
             System.out.println(jsontemp.toString());
-            FileWriter fw = new FileWriter("E:\\github\\company\\src\\main\\test\\case\\common\\test.json");//指定写入的文件路径
+            FileWriter fw = new FileWriter("E:\\github\\company\\src\\main\\test\\case\\common\\userData.json");//指定写入的文件路径
             PrintWriter out = new PrintWriter(fw); //创建写对象
             out.write(jsonObject.toString()); //把修改后的所有人JSON数据写到文件中
             out.println();
@@ -56,7 +56,7 @@ public class ReadAndWriteJSON {
             jsontemp.put("reference", reference);//给对象的推荐人key赋值
             jsonObject.put(wechat, jsontemp);   //把指定对象的JSON数据再写入所有人的JSON数据中
             System.out.println(jsontemp.toString());
-            FileWriter fw = new FileWriter("E:\\github\\company\\src\\main\\test\\case\\common\\test.json");//指定写入的文件路径
+            FileWriter fw = new FileWriter("E:\\github\\company\\src\\main\\test\\case\\common\\userData.json");//指定写入的文件路径
             PrintWriter out = new PrintWriter(fw); //创建写对象
             out.write(jsonObject.toString()); //把修改后的所有人JSON数据写到文件中
             out.println();
@@ -79,7 +79,7 @@ public class ReadAndWriteJSON {
             jsontemp.put("reference", reference);//给对象的推荐人key赋值
             jsonObject.put(wechat, jsontemp);   //把指定对象的JSON数据再写入所有人的JSON数据中
             System.out.println(jsontemp.toString());
-            FileWriter fw = new FileWriter("E:\\github\\company\\src\\main\\test\\case\\common\\test.json");//指定写入的文件路径
+            FileWriter fw = new FileWriter("E:\\github\\company\\src\\main\\test\\case\\common\\userData.json");//指定写入的文件路径
             PrintWriter out = new PrintWriter(fw); //创建写对象
             out.write(jsonObject.toString()); //把修改后的所有人JSON数据写到文件中
             out.println();

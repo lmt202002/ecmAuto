@@ -23,9 +23,8 @@ public class TestCase {
         List<String> userList=new ArrayList<String>();
         userList.add("董事1");
         userList.add("ds1");
-        FgCatchRecommendRebateGet.recommendRebateGet(driver,domain,userList);
-
-
+//        FgCatchRecommendRebateGet.recommendRebateGet(driver,domain,userList);
+        FgStep.getBill(driver,domain);
 
 
 //        Session.bgLogout(driver,domain);//后台退出

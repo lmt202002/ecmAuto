@@ -23,7 +23,9 @@ public class excutecase {
         List<String> userList=new ArrayList<String>();
         userList.add("董事1");
         userList.add("ds1");
-        FgCatchRecommendRebateGet.recommendRebateGet(driver,domain,userList);
+        FgStep fgStep=new FgStep();
+
+        fgStep.recommendRebateGet(driver,domain,userList);
 
 
 

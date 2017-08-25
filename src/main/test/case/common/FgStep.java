@@ -309,7 +309,7 @@ public class FgStep {
         List.add(money);//总额
         List.add(goodsNum);//第一款数量
         List.add(billNum);//订单号
-        System.out.println(List);
+        System.out.println("总额："+List.get(0)+"\n第一款商品数量："+List.get(1)+"\n订单号："+List.get(2));
         return List;
 
     }

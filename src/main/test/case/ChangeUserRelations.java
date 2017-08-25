@@ -1,4 +1,4 @@
-package common;
+import common.BgStep;
 
 public class ChangeUserRelations {
     public String wechat="";

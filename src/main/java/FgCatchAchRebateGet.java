@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FgCatchAchRebateGet {
-    public static List catchAchRebateGiven(WebDriver driver , String domain,List<String> userList) throws InterruptedException {
+    public static List catchAchRebateGet(WebDriver driver , String domain,List<String> userList) throws InterruptedException {
         /**
         访问我的应收团队返利页面，获取我从目标的收取的团队返利，返回Float类型List ，包含返利金额、订单总额；
          */
@@ -33,7 +33,7 @@ public class FgCatchAchRebateGet {
 //                System.out.println(goalnum);
             }
         }
-        driver.get(domain+"/m/agent/admin/performance/mySubBillList?limit=1&start="+goalnum+"");//重新访问我应付的团队返利页面，从第i条开始只显示1条，即只过滤出指定的记录，0为第一条
+        driver.get(domain+"/m/agent/admin/performance/myBillList?limit=1&start="+goalnum+"");//重新访问我应付的团队返利页面，从第i条开始只显示1条，即只过滤出指定的记录，0为第一条
         Thread.sleep(1000);
         try {
             rebate=Float.parseFloat(driver.findElement(By.xpath(".//*[@id='page']/div[2]/div/div/ul/li/div[2]/span[1]/span/em")).getText());//获取返利金额字符串，并转为浮点型

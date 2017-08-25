@@ -19,9 +19,13 @@ public class excutecase {
 //        driver.manage().timeouts().implicitlyWait(10, 3);
         driver.manage().window().maximize();
         String domain="http://o2oagent.ecmaster.cn";
-        String user="18444440004";
+        String user="16111111111";
         Session.login(driver,domain,user);//前台登录
 //        Session.bgLogin(driver,domain);//后台登录
+        List<String> userList=new ArrayList<String>();
+        userList.add("董事1");
+        userList.add("ds1");
+        FgCatchRecommendRebateGet.recommendRebateGet(driver,domain,userList);
 
 
 

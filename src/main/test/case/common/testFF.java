@@ -23,6 +23,11 @@ public class testFF {
             driver.findElement(By.id("btnSearch")).click();//点击搜索
             List<WebElement> trlist=new ArrayList<WebElement>();
             trlist=driver.findElements(By.xpath(".//*[@id='grid']/div/div[3]/table/tbody/tr")); //获取表格区tr元素对象list
+            int size=trlist.size();
+            Thread.sleep(1000);
+            Float orderMoney=Float.parseFloat(driver.findElement(By.xpath(".//*[@id='grid']/div/div[3]/table/tbody/tr["+size+"]/td[4]/div/span")).getText().substring(1));//取订单总额字符串,再截取数值部分，再转为Fload型
+            System.out.println(orderMoney);
+
 //            System.out.println(trlist.size());
 //            driver.findElement(By.xpath(".//*[@id='grid']/div/div[3]/table/tbody/tr[2]/td[2]/div/span/a[1]")).click();//点击编辑
 //            Select sel1=new Select(driver.findElement(By.id("angetLv")));

@@ -5,27 +5,34 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 //import org.openqa.selenium.ie.InternetExplorerDriver;
 import common.*;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class excutecase {
     public static void main(String[] args ) throws InterruptedException, IOException {
 
         WebDriver driver=new ChromeDriver();
 //        driver.manage().timeouts().implicitlyWait(10, 3);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+//       WebDriverWait  wait=new WebDriverWait(driver,5);
         driver.manage().window().maximize();
         String domain="http://o2oagent.ecmaster.cn";
-        String user="16111111111";
-        Session.login(driver,domain,user);//前台登录
-//        Session.bgLogin(driver,domain);//后台登录
+        String user="admin";
+//        Session.login(driver,domain,user);//前台登录
+        Session.bgLogin(driver,domain);//后台登录
         List<String> userList=new ArrayList<String>();
+        userList.add("wxyj001");
+        userList.add("梦想合伙人");
         userList.add("董事1");
-        userList.add("ds1");
-        FgStep fgStep=new FgStep();
+        userList.add("梦想1(mx1)");
+//        FgStep fgStep=new FgStep();
 
-        fgStep.recommendRebateGet(driver,domain,userList);
+         testFF.getTeamArcRebate(driver,domain,"bruceloo");
+
 
 
 

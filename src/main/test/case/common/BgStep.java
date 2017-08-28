@@ -1,5 +1,6 @@
 package common;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -110,6 +111,34 @@ public class BgStep {
         driver.findElement(By.xpath("html/body/div[13]/div[3]/button")).click();//点提示成功提示框的确定
         Thread.sleep(1000);
         driver.findElement(By.xpath("html/body/div[11]/div[3]/button[1]")).click();//点确定发货
+    }
+
+    public static boolean changeRelations(WebDriver driver , String domain, List<String> list) throws InterruptedException {
+        /**
+         根据给的微商关系List，设置指定微商的等级、上级、推荐人，并返回是否成功
+         list.get(0)为当前用户微信号,后续三个分别为微商的等级、上级、推荐人
+         上级格式为:at董事，推荐人格式为：at总裁1(atzc1)
+         */
+        try {
+            driver.get(domain+"/admin/wechatAgent/list");//访问总部微商列表页面
+            driver.findElement(By.id("short_cut_like_orderNumber_")).sendKeys(list.get(0));// 输入微信号
+            driver.findElement(By.xpath("html/body/div[1]/div[2]/div[1]/div[1]/button")).click();//点击搜索
+            driver.findElement(By.xpath("html/body/div[2]")).click();//点击隐藏取消层
+            driver.findElement(By.xpath(".//*[@id='grid']/div/div[3]/table/tbody/tr[2]/td[2]/div/span/a[1]")).click();//点击编辑
+            Select sel1=new Select(driver.findElement(By.id("angetLv")));
+            sel1.selectByVisibleText(list.get(1)); //选择会员等级
+            driver.findElement(By.xpath(".//*[@id='select2-angetChlidLv-container']")).click();//点击上级搜索下拉列表
+            driver.findElement(By.xpath("html/body/span/span/span[1]/input")).sendKeys(list.get(2));//在上级搜索框输入上级姓名
+            driver.findElement(By.xpath("html/body/span/span/span[1]/input")).sendKeys(Keys.ENTER);//搜索框ENTER键选择
+            Select sel2=new Select(driver.findElement(By.id("referrer")));
+            sel2.selectByVisibleText(list.get(3));//选择推荐人
+//            Actions actions=new Actions(driver);
+            driver.findElement(By.xpath(".//*[@id='basicInfoForm']/div[1]/button")).click();
+        }
+        catch (Exception e){
+            return false;
+        }
+        return true;
     }
 
 }

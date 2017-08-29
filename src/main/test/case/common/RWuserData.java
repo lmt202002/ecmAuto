@@ -7,10 +7,6 @@ import java.io.IOException;
 import org.json.JSONObject;
 public class RWuserData {
 
-    public static void main(String args) throws IOException {
-
-    }
-
     public static JSONObject readUserData() throws IOException {
         /**读取文件所有JSON数据赋给JSON对象*/
         File file=new File("E:\\github\\company\\src\\main\\test\\case\\common\\UserData.json");

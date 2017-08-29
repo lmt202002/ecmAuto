@@ -31,7 +31,7 @@ public class excutecase {
         userList.add("梦想1(mx1)");
 //        FgStep fgStep=new FgStep();
 
-         testFF.getTeamArcRebate(driver,domain,"bruceloo");
+         testFF.onceRebate(driver,domain,"bruceloo");
 
 
 

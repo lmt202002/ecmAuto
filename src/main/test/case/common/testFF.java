@@ -12,38 +12,48 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class testFF {
+        public void main(String[] args){
 
-    public static void getTeamArcRebate(WebDriver driver , String domain, String wechat) throws InterruptedException {
+        }
+        public static List onceRebate(WebDriver driver , String domain, String wechat) throws InterruptedException {
         /**
-         根据给的微商微信号，搜索返利记录，并过滤出记录，返回最新记录的订单总额、返利比例、返利总额
+         根据给的微商微信号，搜索返利记录，并过滤出记录，返回最近的统计中，明细页面最新子订单记录的订单总额、返利比例、返利总额，是否正常，1为正常，0为不正常
          */
-//        try {
-            driver.get(domain+"/admin/teamPerformance/index");//访问团队业绩返利报表页面
-            driver.findElement(By.name("agentName")).sendKeys(wechat);// 输入微信号
-            driver.findElement(By.id("btnSearch")).click();//点击搜索
-            List<WebElement> trlist=new ArrayList<WebElement>();
-            trlist=driver.findElements(By.xpath(".//*[@id='grid']/div/div[3]/table/tbody/tr")); //获取表格区tr元素对象list
-            int size=trlist.size();
-            Thread.sleep(1000);
-            Float orderMoney=Float.parseFloat(driver.findElement(By.xpath(".//*[@id='grid']/div/div[3]/table/tbody/tr["+size+"]/td[4]/div/span")).getText().substring(1));//取订单总额字符串,再截取数值部分，再转为Fload型
-            System.out.println(orderMoney);
-
-//            System.out.println(trlist.size());
-//            driver.findElement(By.xpath(".//*[@id='grid']/div/div[3]/table/tbody/tr[2]/td[2]/div/span/a[1]")).click();//点击编辑
-//            Select sel1=new Select(driver.findElement(By.id("angetLv")));
-//            sel1.selectByVisibleText(list.get(1)); //选择会员等级
-//            driver.findElement(By.xpath(".//*[@id='select2-angetChlidLv-container']")).click();//点击上级搜索下拉列表
-//            driver.findElement(By.xpath("html/body/span/span/span[1]/input")).sendKeys(list.get(2));//在上级搜索框输入上级姓名
-//            driver.findElement(By.xpath("html/body/span/span/span[1]/input")).sendKeys(Keys.ENTER);//搜索框ENTER键选择
-//            Select sel2=new Select(driver.findElement(By.id("referrer")));
-//            sel2.selectByVisibleText(list.get(3));//选择推荐人
-//            Actions actions=new Actions(driver);
-//            driver.findElement(By.xpath(".//*[@id='basicInfoForm']/div[1]/button")).click();
-//        }
-//        catch (Exception e){
-//            return l;
-//        }
-//        return true;
+            float orderMoney=0;
+            float percent=0;
+            float rebate=0;
+            float status=1;
+            List<Float> resultList=new ArrayList<Float>();
+        try {
+                driver.get(domain+"/admin/agentOnceRecommend/index");//访问团队业绩返利报表页面
+                new Select(driver.findElement(By.id("month"))).selectByVisibleText("7");//选择7月
+                driver.findElement(By.name("agentName")).sendKeys(wechat);// 输入微信号
+                driver.findElement(By.id("btnSearch")).click();//点击搜索
+                Thread.sleep(1000);
+                List<WebElement> trlist=new ArrayList<WebElement>();
+                trlist=driver.findElements(By.xpath(".//*[@id='grid']/div/div[3]/table/tbody/tr")); //获取表格区tr元素对象list
+                int size=trlist.size();
+                driver.findElement(By.xpath(".//*[@id='grid']/div/div[3]/table/tbody/tr["+size+"]/td[6]/div/span/a")).click();//点击搜索出的微商最近的统计记录的查看明细链接
+                orderMoney=Float.parseFloat(driver.findElement(By.xpath("html/body/div[1]/table/tbody/tr[1]/td[6]")).getText().substring(1));//取最新子订单总额字符串,再截取数值部分，再转为Fload型
+                percent=Float.parseFloat(driver.findElement(By.xpath("html/body/div[1]/table/tbody/tr[1]/td[7]")).getText().split("%")[0]);//取最新子订单返点比例字符串,再截取数值部分，再转为Fload型
+                rebate=Float.parseFloat(driver.findElement(By.xpath("html/body/div[1]/table/tbody/tr[1]/td[8]")).getText().substring(1));//取最新子订单返利总额字符串,再截取数值部分，再转为Fload型
+                System.out.println(rebate);
+                resultList.add(orderMoney);
+                resultList.add(percent);
+                resultList.add(rebate);
+                resultList.add(status);
+        }
+        catch (Exception e){
+                status=0;
+                resultList.add(orderMoney);
+                resultList.add(percent);
+                resultList.add(rebate);
+                resultList.add(status);
+                System.out.println(resultList);
+                return resultList;
+        }
+        System.out.println("最新子订单总额："+orderMoney+"\n返点比例："+percent+"\n返利金额："+rebate+"\n是否成功："+status);
+        return resultList;
     }
 
 

@@ -28,7 +28,7 @@ public class excutecase {
         userList.add("梦想1(mx1)");
 //        FgStep fgStep=new FgStep();
 
-         testFF.setParameter(driver,domain);
+         BgStep.setBaseParameters(driver,domain);
 
 
 

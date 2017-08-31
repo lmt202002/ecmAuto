@@ -1,32 +1,114 @@
 {
-  "atds1":
-    {"wechat":"atds1","name":"at董事","phone":"18111110001","level":"董事","parent":"总部","reference":""},
-  "atzc1":
-    {"wechat":"atzc1","name":"at总裁1","phone":"18222220001","level":"执行总裁","parent":"at董事","reference":""},
-  "atmx1":
-    {"wechat":"atmx1","name":"at梦想1","phone":"18333330001","level":"梦想合伙人","parent":"at总裁1","reference":""},
-  "atyj1":
-    {"wechat":"atyj1","name":"at一级1","phone":"18444440001","level":"一级代理","parent":"at梦想1","reference":""},
-  "atds2":
-    {"wechat":"atds2","name":"at董事2","phone":"19111110001","level":"董事","parent":"总部","reference":"atds1"},
-  "atzc2":
-    {"wechat":"atzc2","name":"at总裁2","phone":"18222220002","level":"执行总裁","parent":"at董事","reference":"atzc1"},
-  "atzc3":
-    {"wechat":"atzc3","name":"at总裁3","phone":"18222220003","level":"执行总裁","parent":"at董事","reference":"atzc2"},
-  "atzc4":
-    {"wechat":"atzc4","name":"at总裁4","phone":"18222220004","level":"执行总裁","parent":"at董事","reference":"atzc3"},
-  "atmx2":
-    {"wechat":"atmx2","name":"at梦想2","phone":"18333330002","level":"梦想合伙人","parent":"at总裁1","reference":"atmx1"},
-  "atmx3":
-    {"wechat":"atmx3","name":"at梦想3","phone":"18333330003","level":"梦想合伙人","parent":"at总裁1","reference":"atmx2"},
-  "atmx4":
-    {"wechat":"atmx4","name":"at梦想4","phone":"18333330004","level":"梦想合伙人","parent":"at总裁1","reference":"atmx3"},
-  "atyj2":
-    {"wechat":"atyj2","name":"at一级2","phone":"18444440002","level":"一级代理","parent":"at梦想1","reference":"atyj1"},
-  "atyj3":
-    {"wechat":"atyj3","name":"at一级3","phone":"18444440003","level":"一级代理","parent":"at梦想1","reference":"atyj2"},
-  "atyj4":
-    {"wechat":"atyj4","name":"at一级4","phone":"18444440004","level":"一级代理","parent":"at梦想1","reference":"atyj3"}
+  "atzc1": {
+    "phone": "18222220001",
+    "level": "执行总裁",
+    "name": "at总裁1",
+    "parent": "atds1",
+    "wechat": "atzc1",
+    "reference": ""
+  },
+  "atzc3": {
+    "phone": "18222220003",
+    "level": "执行总裁",
+    "name": "at总裁3",
+    "parent": "atds1",
+    "wechat": "atzc3",
+    "reference": "atzc2"
+  },
+  "atzc2": {
+    "phone": "18222220002",
+    "level": "执行总裁",
+    "name": "at总裁2",
+    "parent": "atds1",
+    "wechat": "atzc2",
+    "reference": "atzc1"
+  },
+  "atds2": {
+    "phone": "19111110001",
+    "level": "董事",
+    "name": "at董事2",
+    "parent": "总部",
+    "wechat": "atds2",
+    "reference": "atds1"
+  },
+  "atyj1": {
+    "phone": "18444440001",
+    "level": "一级代理",
+    "name": "at一级1",
+    "parent": "atmx1",
+    "wechat": "atyj1",
+    "reference": ""
+  },
+  "atyj2": {
+    "phone": "18444440002",
+    "level": "一级代理",
+    "name": "at一级2",
+    "parent": "atmx1",
+    "wechat": "atyj2",
+    "reference": "atyj1"
+  },
+  "atyj3": {
+    "phone": "18444440003",
+    "level": "一级代理",
+    "name": "at一级3",
+    "parent": "atmx1",
+    "wechat": "atyj3",
+    "reference": "atyj2"
+  },
+  "atmx3": {
+    "phone": "18333330003",
+    "level": "梦想合伙人",
+    "name": "at梦想3",
+    "parent": "atzc1",
+    "wechat": "atmx3",
+    "reference": "atmx2"
+  },
+  "atmx2": {
+    "phone": "18333330002",
+    "level": "梦想合伙人",
+    "name": "at梦想2",
+    "parent": "atzc1",
+    "wechat": "atmx2",
+    "reference": "atmx1"
+  },
+  "atyj4": {
+    "phone": "18444440004",
+    "level": "一级代理",
+    "name": "at一级4",
+    "parent": "atmx1",
+    "wechat": "atyj4",
+    "reference": "atzc3"
+  },
+  "atds1": {
+    "phone": "18111110001",
+    "level": "董事",
+    "name": "at董事",
+    "parent": "总部",
+    "wechat": "atds1",
+    "reference": ""
+  },
+  "atmx4": {
+    "phone": "18333330004",
+    "level": "梦想合伙人",
+    "name": "at梦想4",
+    "parent": "atzc1",
+    "wechat": "atmx4",
+    "reference": "atmx3"
+  },
+  "atzc4": {
+    "phone": "18222220004",
+    "level": "执行总裁",
+    "name": "at总裁4",
+    "parent": "atds1",
+    "wechat": "atzc4",
+    "reference": "atzc3"
+  },
+  "atmx1": {
+    "phone": "18333330001",
+    "level": "梦想合伙人",
+    "name": "at梦想1",
+    "parent": "atzc1",
+    "wechat": "atmx1",
+    "reference": ""
+  }
 }
-//初始化14个用户,每个用户五个属性顺序为：微信号、姓名、手机号码、上级、推荐人
-

@@ -12,7 +12,9 @@ import java.util.concurrent.TimeUnit;
 
 public class TestAddBill {
     public static void main(String[] args ) throws InterruptedException, IOException {
-
+        /**前台微商采购下单
+         * 并把返回的订单总额、商品数量、订单号写入TestAddBill01.json文件
+         */
         WebDriver driver=new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         String domain="http://o2oagent.ecmaster.cn";

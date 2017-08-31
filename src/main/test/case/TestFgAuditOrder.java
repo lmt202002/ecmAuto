@@ -13,7 +13,9 @@ import java.util.concurrent.TimeUnit;
 
 public class TestFgAuditOrder {
     public static void main(String[] args ) throws InterruptedException, IOException {
-
+        /**前台订单审核
+         * 并把返回的订单金额和数量写入TestFgAuditOrder01.json文件
+         */
         WebDriver driver=new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         String domain="http://o2oagent.ecmaster.cn";

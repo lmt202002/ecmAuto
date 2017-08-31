@@ -1,24 +1,30 @@
 package common;
 
+import org.json.JSONObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class FgStep {
-    public static void auditOrder(WebDriver driver , String domain, boolean status) throws InterruptedException {
+    public static List auditOrder(WebDriver driver , String domain, boolean status) throws InterruptedException {
         /**
-         前台代理商审核下级订单，并按提供的参数点同意或拒绝
+         前台代理商审核下级订单，并按提供的参数点同意或拒绝，并返回订单金额和订单商品数量
          */
         driver.get(domain+"/m/agent/admin/order/subOrderUnCheckList?limit=10&start=0");//访问待审核下级订单列表页面
         Thread.sleep(2000);
         List<WebElement> links=driver.findElements(By.linkText("审核"));//获取所有审核链接
         links.get(0).click();//点击第一个的审核
         Thread.sleep(2000);
-//        driver.navigate().refresh();
+        float money=0;
+        float number=0;
         if (status) {
+             money=Float.parseFloat(driver.findElement(By.xpath(".//*[@id='page']/div[2]/div/div[1]/div[2]/div/em")).getText().toString());//获取订单金额
+             number=Float.parseFloat(driver.findElement(By.xpath(".//*[@id='page']/div[2]/div/div[3]/div/div[1]/em")).getText().toString());//获取订单商品数量
             driver.findElement(By.xpath(".//*[@id='page']/div[2]/div/div[6]/div/div/a[1]/span")).click();//如果是true就点同意
             driver.findElement(By.xpath("html/body/div[3]/div[3]/a[2]")).click();//点击确定操作
         }
@@ -26,6 +32,11 @@ public class FgStep {
             driver.findElement(By.xpath(".//*[@id='page']/div[2]/div/div[6]/div/div/a[2]/span")).click();//如果不是true就点拒绝
             driver.findElement(By.xpath("html/body/div[5]/div[3]/a[2]")).click();//点击确定操作
         }
+        List<Float> list1=new ArrayList<Float>();
+        list1.add(money);
+        list1.add(number);
+        System.out.println("订单金额："+money+"\n商品数量："+number);
+        return list1;   //返回订单金额和商品总数量
     }
     public static List catchAch(WebDriver driver , String domain) throws InterruptedException {
         /**
@@ -313,4 +324,6 @@ public class FgStep {
         return List;
 
     }
+
+
 }

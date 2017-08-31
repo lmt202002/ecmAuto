@@ -4,6 +4,8 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import org.apache.commons.io.FileUtils;
 import java.io.IOException;
+import java.util.List;
+
 import org.json.JSONObject;
 public class RWuserData {
 
@@ -15,6 +17,23 @@ public class RWuserData {
 //        System.out.println(contenttmp);
         return contenttmp;
     }
+
+    public static void writeTestJSON(List list,String filename) throws IOException {
+        JSONObject jsonObject=new JSONObject();
+        int size=list.size();
+        for (int i=0;i<size;i++) {
+            jsonObject.put("项目"+i, list.get(i));   //循环添加list的值到JSON对象
+        }
+        FileWriter fw = new FileWriter("E:\\github\\company\\src\\main\\test\\case\\testdata\\"+filename+".json");//指定写入的文件路径
+        PrintWriter out = new PrintWriter(fw); //创建写对象
+        out.write(jsonObject.toString()); //把修改后的所有人JSON数据写到文件中
+        out.println();
+        fw.close();
+        out.close();
+    }
+
+
+
     public static JSONObject readUserData(String filePath,String wechat) throws IOException {
         /**读取文件所有用户JSON数据赋给JSON对象*/
         File file=new File(filePath);
@@ -96,6 +115,7 @@ public class RWuserData {
         }
         return jsonObject;
     }
+
 
 
 

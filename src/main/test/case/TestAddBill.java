@@ -23,17 +23,9 @@ public class TestAddBill {
         Session.login(driver,domain,userPhone);//前台登录
 //        List<String> userList=new ArrayList<String>();
         List<String>list1=FgStep.getBill(driver,domain);//下采购单
-        JSONObject jsonObject=new JSONObject();
-        jsonObject.put("wechat",wechat);
-        jsonObject.put("totalNoney",list1.get(0));
-        jsonObject.put("number",list1.get(1));
-        jsonObject.put("orderNumber",list1.get(2));
-        FileWriter fw = new FileWriter("E:\\github\\company\\src\\main\\test\\case\\testdata\\billdata.json");//指定写入的文件路径
-        PrintWriter out = new PrintWriter(fw); //创建写对象
-        out.write(jsonObject.toString()); //把修改后的所有人JSON数据写到文件中
-        out.println();
-        fw.close();
-        out.close();
+        list1.add(wechat);
+
+        RWuserData.writeTestJSON(list1,"TestAddBill01");//写结果数据到TestAddBill01.json
 
         Session.logout(driver,domain);//前台退出
         driver.close();

@@ -9,11 +9,11 @@ import java.util.List;
 import org.json.JSONObject;
 public class RWuserData {
 
-    public static String readTestData(String filePath,String wechat) throws IOException {
-        /**读取文件所有一般JSON数据赋给JSON对象*/
+    public static String readTestData(String filePath,String goal) throws IOException {
+        /**读取文件所有一般JSON数据返回字符串*/
         File file=new File(filePath);
         String content= FileUtils.readFileToString(file,"UTF-8");
-        String contenttmp=new JSONObject(content).toMap().get(wechat).toString();
+        String contenttmp=new JSONObject(content).toMap().get(goal).toString();
 //        System.out.println(contenttmp);
         return contenttmp;
     }

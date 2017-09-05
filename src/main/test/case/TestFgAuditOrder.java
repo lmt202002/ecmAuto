@@ -26,9 +26,7 @@ public class TestFgAuditOrder {
         String parentPhone=RWuserData.readUserData(userFilePath,parentWechat).toMap().get("phone").toString();//根据上级微信号找出对应的手机号码
         Session.login(driver,domain,parentPhone);//上级在前台登录
 
-        List<Float> list=new ArrayList<Float>();
-        list= FgStep.auditOrder(driver,domain,true);//审核时，点同意，并返回订单金额和数量
-        RWuserData.writeTestJSON(list,"TestFgAuditOrder01");//TestFgAuditOrder01.json文件
+        FgStep.auditOrder(driver,domain,true);//审核时，点同意，并返回订单金额和数量，并写入数据到auditOrder.json文件
 
         Session.logout(driver,domain);//退出登录
         driver.close();//结束浏览器

@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-public class TestStock {
+public class TestWillStock {
     public static void main(String[] args ) throws InterruptedException, IOException {
 
     }
@@ -58,7 +58,6 @@ public class TestStock {
         Session.login(driver,domain,userPhoneParent);//上级前台登录
         List listaudit;
         listaudit=FgStep.auditOrder(driver,domain,true);//上级审核，返回审核结果数据
-
         Session.logout(driver,domain);//上级前台退出
 
 

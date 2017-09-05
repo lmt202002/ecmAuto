@@ -12,12 +12,12 @@ public  class Session{
     public void main(){
 
     }
-    public static void login(WebDriver driver , String domain,String user){
+    public static void login(WebDriver driver , String domain,String phone){
         driver.get(domain+"/m/agent/admin/main");//访问登录页
         WebElement username=driver.findElement(By.id("username"));//
         WebElement password=driver.findElement(By.id("password"));
         WebElement login=driver.findElement(By.id("sub"));
-        username.sendKeys(user);//填写用户名
+        username.sendKeys(phone);//填写用户名
         password.sendKeys("111111");//填写密码
         login.click();//登录前台
     }

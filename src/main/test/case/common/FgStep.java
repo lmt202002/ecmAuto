@@ -297,24 +297,24 @@ public class FgStep {
          */
         driver.get(domain+"/m/agent/admin/product/productList");//访问前台订货商品列表页面
 //        driver.navigate().refresh();
-//        Thread.sleep(2000);
+        Thread.sleep(2000);
 //        driver.findElement(By.id("productName")).sendKeys(goodsName); //输入商品名称
         driver.findElement(By.xpath(".//*[@id='J_ProductList']/ul/li[1]/a/div[1]")).click();//点击第一个商品，当前测试库为新商品0621
-//        Thread.sleep(2000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath(".//*[@id='J_BtnCart']/span")).click();//点击加入进货单按键
-//        Thread.sleep(2000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath(".//*[@id='div_sku_list']/div[1]/div/div/label[1]/span")).click();//选择一级第一个规格
         driver.findElement(By.xpath(".//*[@id='div_sku_list']/div[2]/div/div/label[1]/span")).click();//选择二级第一个规格
         driver.findElement(By.xpath(".//*[@id='J_ASSpec']/div[3]/div/div[3]/div[1]/label[2]/span")).click();//选择数量单位为个
         driver.findElement(By.id("quantity")).clear();//先清除值
         driver.findElement(By.id("quantity")).sendKeys("120");//再输入数量为120个
         driver.findElement(By.xpath(".//*[@id='J_ASSpec']/div[4]/div/div/a/span")).click();//点击确定
-//        Thread.sleep(2000);
+        Thread.sleep(2000);
         driver.get(domain+"/m/agent/admin/order/cart/show");//访问进货单页面
-//        Thread.sleep(2000);
+        Thread.sleep(2000);
         driver.findElement(By.id("J_CheckAll")).click();//全选
         driver.findElement(By.id("J_ButtonCash")).click();//结算
-//        Thread.sleep(2000);
+        Thread.sleep(2000);
 //        String js="document.getElementsByName('filePath').value='/cmsstatic/agent_order_checkout/15907/1503308408918821.jpg')'";
 //        ((JavascriptExecutor) driver).executeScript(js);
         driver.findElement(By.id("orderRemark")).sendKeys("打款人姓名");//填写打款人
@@ -336,6 +336,34 @@ public class FgStep {
         return List;
 
     }
+    public static String sendGoods(WebDriver driver , String domain,String code) throws InterruptedException {
+        /**前台发货
+         *发货，并返回发送的订单号
+         */
+        driver.get(domain+"/m/agent/admin/order/subOrderUnSendList?limit=10&start=0");//访问前台待发货列表
+        driver.findElement(By.xpath(".//*[@id='page']/div[2]/div/div[2]/ul/li/div[2]/span[2]/a")).click();//点击第一条待发货记录的发货
+        driver.findElement(By.xpath(".//*[@id='code']")).sendKeys(code);//输入防伪码
+        driver.findElement(By.xpath(".//*[@id='J_BtnAddCode']")).click();//点添加
+        Thread.sleep(2000);//等添加
+        driver.findElement(By.xpath(".//*[@id='J_BtnComplete']")).click();//点完成
+        Thread.sleep(1000);//等加载发货页面
+        driver.findElement(By.xpath(".//*[@id='trackNumber']")).sendKeys("DDD111111");//填写快递单号
+        driver.findElement(By.xpath(".//*[@id='completeSendBtn']")).click();//点发货
+        System.out.println("发货单号："+driver.findElement(By.xpath(".//*[@id='page']/div[2]/div/strong")).getText().split("【")[1].split("】")[0].toString());
+        return driver.findElement(By.xpath(".//*[@id='page']/div[2]/div/strong")).getText().split("【")[1].split("】")[0].toString(); //返回发货的订单单号
+    }
 
+    public static String receiveGoods(WebDriver driver , String domain) throws InterruptedException {
+        /**前台确认收货
+         *点击第一条待收货记录的确认收货，并操作第一个发货单的确认收货，返回确认收货数量字符串
+         */
+        driver.get(domain+"/m/agent/admin/order/orderSendList?limit=10&start=0");//访问前台我的待收货列表
+        driver.findElement(By.xpath(".//*[@id='page']/div[2]/div/div[2]/ul/li/div[2]/span[2]/a")).click();//点击列表第一条待确认收货记录的确认收货按键
+        List<WebElement> list=new ArrayList<WebElement>();
+        list=driver.findElements(By.xpath(".//*[@id='confirmBtn']"));//获取发货单确认收货记录
+        list.get(0).click();        //点击第一条待收货记录的确认收货
+        driver.findElement(By.xpath("html/body/div[4]/div[2]/a[2]")).click();//点击确定
+        return driver.findElement(By.xpath(".//*[@id='page']/div[2]/div/div[2]/ul/li/div[2]/div/span[1]/span[3]")).getText().substring(1);
+    }
 
 }

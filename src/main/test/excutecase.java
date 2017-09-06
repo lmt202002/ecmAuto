@@ -1,19 +1,9 @@
-import common.testFF;
-import org.apache.commons.io.FileUtils;
-import org.json.JSONObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 //import org.openqa.selenium.ie.InternetExplorerDriver;
 import common.*;
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class excutecase {
@@ -35,7 +25,6 @@ public class excutecase {
         Session.login(driver,domain,phone);
         FgStep.sendGoods(driver,domain,code);
 //       System.out.println( FgStep.receiveGoods(driver,domain));
-
 
 
 

@@ -111,10 +111,11 @@ public class FgStep {
 
     public static List catchAchRebateGiven(WebDriver driver , String domain,List<String> userList) throws InterruptedException {
         /**
-         访问我的应付团队返利页面，获取我应付给目标的团队返利，返回Float类型List ，包含返利金额、订单总额；
+         访问我的应付团队返利页面，获取我应付给目标的团队返利，返回Float类型List ，包含返利比例、返利金额、订单总额；
          */
         float rebate=0;
         float totals=0;
+        float percent=0;
         List<WebElement> nameElement=new ArrayList<WebElement>(); //定义列表所有对象List
         List<Float> List1=new ArrayList<Float>();//定义返回值List
         driver.get(domain+"/m/agent/admin/performance/mySubBillList?limit=100&start=0");//访问我应付的团队返利页面
@@ -139,16 +140,19 @@ public class FgStep {
         driver.get(domain+"/m/agent/admin/performance/mySubBillList?limit=1&start="+goalnum+"");//重新访问我应付的团队返利页面，从第i条开始只显示1条，即只过滤出指定的记录，0为第一条
         Thread.sleep(1000);
         try {
+            percent=Float.parseFloat(driver.findElement(By.xpath(".//*[@id='page']/div[2]/div/div[1]/ul/li/a/p[3]")).getText().split("：")[1].split("%")[0].toString());//获取返利比例字符串，并转为浮点型
             rebate=Float.parseFloat(driver.findElement(By.xpath(".//*[@id='page']/div[2]/div/div/ul/li/div[2]/span[1]/span/em")).getText());//获取返利金额字符串，并转为浮点型
             totals=Float.parseFloat(driver.findElement(By.xpath(".//*[@id='page']/div[2]/div/div/ul/li/div[2]/span[2]/span/em")).getText());//获取订单总额字符串，并转为浮点型
         }catch (Exception e){
+            List1.add(percent);
             List1.add(rebate);
             List1.add(totals);
             return List1;
         }
+        List1.add(percent);//返利比例
         List1.add(rebate);//返利
         List1.add(totals);//订单总额
-//        System.out.println("返利金额："+List1.get(0)+"\n订单总额："+List1.get(1));
+        System.out.println("返利比例："+percent+"\n返利金额："+List1.get(0)+"\n订单总额："+List1.get(1));
         return List1;
     }
 

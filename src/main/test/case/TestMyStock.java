@@ -57,7 +57,13 @@ public class TestMyStock {
         Map mapParent= RWuserData.readUserData(userFilePath,map.get("parent").toString()).toMap();//取出用户的上级数据为Map
         String userPhoneParent=mapParent.get("phone").toString();//从mapParent中取出用户上级手机号
         Session.login(driver,domain,userPhoneParent);//上级前台登录
-        String goodsNum=FgStep.sendGoods(driver,domain,code);//上级发货，并返回发货数量
+        String goodsNum;
+        try {
+            goodsNum =FgStep.sendGoods(driver,domain,code);//上级发货，并返回发货数量
+        }
+        catch (Exception e){
+             goodsNum="0";
+        }
         Session.logout(driver,domain);//上级前台退出
 
 

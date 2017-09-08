@@ -33,11 +33,14 @@ public class FgStep {
         if (status) {
              money=Float.parseFloat(driver.findElement(By.xpath(".//*[@id='page']/div[2]/div/div[1]/div[2]/div/em")).getText().toString());//获取订单金额
              number=Float.parseFloat(driver.findElement(By.xpath(".//*[@id='page']/div[2]/div/div[3]/div/div[1]/em")).getText().toString());//获取订单商品数量
-            driver.findElement(By.xpath(".//*[@id='page']/div[2]/div/div[6]/div/div/a[1]/span")).click();//如果是true就点同意
+//            driver.findElement(By.xpath(".//*[@id='page']/div[2]/div/div[6]/div/div/a[1]/span")).click();//如果是true就点同意
+            driver.findElement(By.xpath(".//*[@id='page']/div[2]/div/div[6]/div/div/a[1]")).click();//如果是true就点同意
+          Thread.sleep(1000);
             driver.findElement(By.xpath("html/body/div[3]/div[3]/a[2]")).click();//点击确定操作
         }
         else {
-            driver.findElement(By.xpath(".//*[@id='page']/div[2]/div/div[6]/div/div/a[2]/span")).click();//如果不是true就点拒绝
+            driver.findElement(By.xpath(".//*[@id='page']/div[2]/div/div[6]/div/div/a[2]")).click();//如果不是true就点拒绝
+            Thread.sleep(1000);
             driver.findElement(By.xpath("html/body/div[5]/div[3]/a[2]")).click();//点击确定操作
         }
         List<Float> list1=new ArrayList<Float>();
@@ -125,6 +128,7 @@ public class FgStep {
 
         if (nameElement.size()==0){  //如果没有h3对象，证明列表没有记录，值都可以置为空，返回0值；
 //            System.out.println("列表没有记录");
+            List1.add(percent);
             List1.add(rebate);
             List1.add(totals);
             return List1;
@@ -152,7 +156,7 @@ public class FgStep {
         List1.add(percent);//返利比例
         List1.add(rebate);//返利
         List1.add(totals);//订单总额
-        System.out.println("返利比例："+percent+"\n返利金额："+List1.get(0)+"\n订单总额："+List1.get(1));
+        System.out.println("返利比例："+List1.get(0)+"\n返利金额："+List1.get(1)+"\n订单总额："+List1.get(2));
         return List1;
     }
 

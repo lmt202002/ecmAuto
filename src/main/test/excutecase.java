@@ -4,6 +4,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import common.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class excutecase {
@@ -15,16 +17,15 @@ public class excutecase {
 //       WebDriverWait  wait=new WebDriverWait(driver,5);
 //        driver.manage().window().maximize();
         String domain="http://o2oagent.ecmaster.cn";
-        String wechat="atds1";
-        String level="梦想合伙人";
-        String parent="at总裁1";
-        String reference="atzc3";
-        String phone="18111110001";
-        String code="8103211325147762";
+        String wechat="atyj4";
+        String name="at一级4";
+        String phone="18444440003";
         String userFilePath="E:\\github\\company\\src\\main\\test\\case\\common\\UserData.json";
         Session.login(driver,domain,phone);
-        FgStep.sendGoods(driver,domain,code);
-//       System.out.println( FgStep.receiveGoods(driver,domain));
+        List<String> userlist=new ArrayList<String>();  //存储用户姓名和微信号
+        userlist.add(name);
+        userlist.add(wechat);
+        FgStep.catchAchRebateGiven(driver,domain,userlist);
 
 
 

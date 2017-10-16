@@ -9,6 +9,7 @@ import java.util.List;
 import org.json.JSONObject;
 public class RWuserData {
 
+
     public static String readTestData(String filePath,String goal) throws IOException {
         /**读取文件所有一般JSON数据返回字符串*/
         File file=new File(filePath);
